@@ -217,3 +217,65 @@ for(let i =0; i < 10; i++){
   const sq = i * i; // 各繰り返しごとにループ内で宣言した変数が無効になる
   console.log(`sq(${i} * ${i}の結果): ${sq}`);
 }
+
+
+
+/**
+ * 例題1
+ * 西暦が与えられたとき、昭和ならば「西暦xxxx年は昭和xx年」、平成ならば「西暦xxxx年は平成xx年」とコンソールに表示するプログラムを作成。
+ * ただし与えられる西暦は1930年から2018年までに限る
+*/
+
+const showaStart = 1929;
+const heiseiStart = 1989;
+const year = 2017;
+const isHeisei = year - heiseiStart >= 0; // 1989を引いて0以上の場合は「isHeisei」に代入
+
+if(isHeisei) {
+  const heiseiYear = year - heiseiStart + 1;
+  console.log(`西暦${year}年は平成${heiseiYear}年です。`);
+} else {
+  const showaYear = year - showaStart + 1;
+  console.log(`西暦${year}年は昭和${showaYear}年です。`);
+}
+
+
+/**
+ * 例題2
+ * 2の累乗の値を、0乗から5乗までコンソールに表示せよ。なお累乗は「**」で計算できる。
+*/
+
+for(let n = 0; n <= 5; n++){
+  const res = 2 ** n;
+  console.log(`2の${n}乗は${res}です。`);
+}
+
+/**
+ * 課題1
+ * 0から23までのいずれかの値である整数hourを考える。
+ * このときhourが0から11までのときは「午前xx時です」、
+ * 12のときは「正午です」、
+ * 13から23までのときは「午後xx時です」と表示するプログラムを作成せよ
+*/
+
+let hour = 9;
+
+if(hour >= 0 && hour <= 11) {
+  console.log(`午前${hour}時です。`);
+} else if ( hour >= 13 && hour <= 23) {
+  console.log(`午後${hour - 12}時です。`);
+} else if ( hour === 12 ) {
+  console.log('正午です。');
+}
+
+/**
+ * 課題2
+ * 1から30までの数をコンソールに列挙せよ。
+ * ただし3の倍数のときだけは頭が悪くなって数字を出力できないものとする。
+*/
+
+for (let i = 1; i <=30; i++) {
+  if( i % 3 !== 0 ) {
+    console.log(`数字：${i}`);
+  }
+}
