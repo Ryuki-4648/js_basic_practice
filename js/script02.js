@@ -4,6 +4,8 @@
  * 関数とは
  * function 関数名(受け取る値につける名前)
  * 定義した関数は「関数名(渡す値)」の書式で呼び出す ＝ 関数呼び出し
+ * 
+ * ざっくり：具体的なコードをまとめ、名前をつけて、抽象化する
 */
 
 function f(x) { // 関数fの定義。関数fは引数xを受け取る
@@ -200,3 +202,54 @@ function m(x) {
  * 通常関数：巻き上げ可能
  * アロー関数：巻き上げ不可（let,constを使う場合）
  */
+
+
+
+
+/**
+ * 値渡し
+*/
+
+const plusTwo = (x) => {
+  x += 2; // 受け取ったxに2を加算して代入している
+  return x;
+}
+
+const settingNum = 10;
+const numPlusTwo = plusTwo(settingNum); // 変数そのものではなく、「10」を渡しているだけ
+console.log(settingNum); // 10 変数settingNum自体は10のまま
+console.log(numPlusTwo); // 12 （10に2を加算されたもの）
+
+
+
+
+/**
+ * 例題
+*/
+
+const toHeisei = (settingYear) => {
+  const heiseiStart = 1989;
+
+  const isHeisei = settingYear - heiseiStart + 1;
+  console.log(`西暦${settingYear}年は平成${isHeisei}年です。`);
+}
+
+toHeisei(2000);
+toHeisei(2017);
+
+
+
+/**
+ * 関数の利点
+ * 
+ * 複雑な処理を関数に隔離してしまうことで、本来のコードの流れが清潔に保たれる
+ * 処理に名前をつけられるので、何の処理が行われているかわかりやす
+ * 
+ * スコープを作るため、関数内で定義され多変数が外に漏れださない　バグが減る
+ * 
+ * 繰り返しを避ける　DRY原則（Don’t Repeat Yourself; 同じことを繰り返すな）
+ * 命令をまとめる
+ * ※重複コードはできる限り取り除くというのが、プログラミングにおける一般常識
+ * 
+ * 何度でも呼び出すことができる
+*/
