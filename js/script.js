@@ -193,3 +193,27 @@ for(let num = 0; num <= 10; num++) {
     console.log(`${num}は奇数です。`);
   }
 }
+
+
+
+
+/**
+ * 変数のスコープ（有効範囲）
+*/
+
+const scopeCheck = 10;
+
+if(scopeCheck > 5){
+  const message = `${scopeCheck}は5よりも大きい。`;
+}
+
+// console.log(message); Uncaught ReferenceError: message is not defined
+// 変数「message」にアクセスできない
+
+// しかしブロックの外で宣言された変数は、ブロックの中からアクセスすることが可能
+
+
+for(let i =0; i < 10; i++){
+  const sq = i * i; // 各繰り返しごとにループ内で宣言した変数が無効になる
+  console.log(`sq(${i} * ${i}の結果): ${sq}`);
+}
