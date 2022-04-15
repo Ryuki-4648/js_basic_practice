@@ -254,9 +254,18 @@ toHeisei(2017);
  * 何度でも呼び出すことができる
 */
 
-console.log('----- 関数の応用的な使い方 -----');
+console.log('----- デフォルト引数 -----');
 
-// 関数の応用的な使い方
+
+
+/**
+ * 関数の応用的な使い方
+*/
+
+
+/**
+ * デフォルト引数
+*/
 
 // 一部の引数を省略できる。＝をつけてデフォルト値を設定できる
 let printSum = (a, b, withText = false) => {
@@ -271,3 +280,22 @@ let printSum = (a, b, withText = false) => {
 
 printSum(4, 6);
 printSum(5, 7, true);
+
+console.log('----- 再帰関数 -----');
+
+/**
+ * 再帰関数
+*/
+
+// 自分自身を呼び出す
+
+let fact = (n) => {
+  if(n === 1) { 
+    return 1;
+  }
+  return n * fact(n - 1); // 自分自身を呼び出す
+}
+
+console.log(fact(1));
+console.log(fact(4)); // 4 * 3 * 2 * 1 = 24
+console.log(fact(8));
