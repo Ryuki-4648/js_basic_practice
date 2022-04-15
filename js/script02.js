@@ -253,3 +253,21 @@ toHeisei(2017);
  * 
  * 何度でも呼び出すことができる
 */
+
+console.log('----- 関数の応用的な使い方 -----');
+
+// 関数の応用的な使い方
+
+// 一部の引数を省略できる。＝をつけてデフォルト値を設定できる
+let printSum = (a, b, withText = false) => {
+  const sum = a + b;
+
+  if(withText) {
+    console.log(`${a}と${b}の和は${sum}です。`);
+  } else {
+    console.log(sum);
+  }
+}
+
+printSum(4, 6);
+printSum(5, 7, true);
