@@ -299,3 +299,47 @@ let fact = (n) => {
 console.log(fact(1));
 console.log(fact(4)); // 4 * 3 * 2 * 1 = 24
 console.log(fact(8));
+
+
+
+
+
+/**
+ * 値としての関数
+*/
+
+// 1）関数を変数に代入するパターン
+function func01() {
+  console.log('func01 Hello');
+}
+
+const myFunc01 = func01;
+// 「関数func01」を変数myFunc01に代入する
+// 関数を値として扱っているので、後ろにカッコ()がつかない
+
+myFunc01(); // 代入した関数を「実行」する
+
+
+
+// 2）名前のない関数（無名関数）を代入するパターン
+const func02 = function(){
+  console.log('func02 Hello');
+}
+
+func02(); // 変数func02に代入された無名関数を実行する
+// 巻き上げは行われない
+
+
+// 3）アロー関数
+const add02 = (a, b) => a + b;
+console.log(add02(10, 50));
+// {}やreturnを省略できる
+// 巻き上げは行われない
+
+const calc = () => {
+  const x = 10;
+  const y = 20;
+  return x + y;
+}
+// 関数が複数行にわたる場合は{}やreutrnを使う（値を返さない関数なら不要）
+console.log(calc());
