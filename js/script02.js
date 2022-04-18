@@ -144,7 +144,7 @@ console.log(isPrime(3331));
 console.log(isPrime(4444));
 
 
-
+console.log('----- 関数のスコープ -----');
 
 /**
  * 関数のスコープ
@@ -407,3 +407,121 @@ const innerFunc = func03();
 // 無名関数の定義場所からは変数innerにアクセスできるため、実行場所に関係なくアクセスできる
 
 innerFunc();
+
+
+
+
+/**
+ * 例題
+ * 2つの数を受け取り、その差を返す関数subを定義せよ。
+ * また、いくつかの数値で実際に関数を使用し、結果を確かめよ。
+*/
+
+/* 間違えた分
+let num01 = 10;
+let num02 = 46;
+const sub = (num01, num02) => {
+  return num01 - num02;
+}
+console.log(sub());*/
+
+
+const sub = (num01, num02) => {
+  return num01 - num02;
+}
+console.log(sub(10, 46));
+console.log(sub(100, 30));
+console.log(sub(2, 65));
+
+
+
+
+
+
+/**
+ * 例題
+ * 整数値nを受け取り、0からnまでの整数をコンソールに出力する関数printNumberを定義せよ。
+ * また、実際に関数を使用して結果が正しいことを確かめよ。
+*/
+
+let printNumber = (n) => {
+  for(let i = 0; i <= n; i++){
+    console.log(`0からnまでの整数: ${i}`);
+  }
+}
+printNumber(8);
+
+
+
+
+
+/**
+ * 課題
+ * 日数dを受け取り秒数に換算した値を返す関数dayToSecを定義せよ。
+ * また、いくつかの値で計算結果が正しいことを確かめよ。
+*/
+
+let dayToSec = (d) => {
+  let sec = d * 86400;
+  console.log(`${d}日を秒に換算すると${sec}秒になります。`);
+}
+
+dayToSec(1);
+dayToSec(7);
+dayToSec(30);
+
+
+
+
+
+
+/**
+ * 課題
+ * 整数limit未満の素数を列挙する関数listPrimes(limit)を定義せよ。
+ * また、実際に関数を利用して出力が正しいことを確かめよ。
+*/
+
+/*
+let listPrimes = (limit) => {
+
+  for(let i = 3; i < limit; i += 2) {
+    if( limit % i === 0 ) {
+      return false;
+    }
+  }
+  console.log(limit);
+}
+
+listPrimes(6);
+*/
+
+// 素数を判定する関数　素数ならばtrue,そうでなければfalseを返す
+let isPrimeFunc = (n) => {
+  if(n < 2) {
+    return false; // 2未満（1）は素数ではない
+  }
+  if(n === 2) {
+    return true; // 2は素数
+  }
+  if(n % 2 === 0) {
+    return false; // 2で割り切れる（偶数）は素数ではない
+  }
+
+  for(let i = 2; i < n; i++) {
+    if( n % i === 0 ) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+let listPrimes = (limit) => {
+  for (let i = 2; i < limit; i++) {
+    if( isPrimeFunc(i) === true ) {
+      console.log(`整数${limit}未満の素数は：${i}`);
+    }
+  }
+}
+
+listPrimes(50);
