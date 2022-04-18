@@ -189,3 +189,24 @@ pointer.printer();
 
 // consoleオブジェクトのlogメソッドを呼び出している
 // console.log();
+
+
+
+
+
+/**
+ * 例題
+*/
+
+const rectangle = {
+  width: 12,
+  height: 20,
+  calcArea: function(){
+    console.log(this.width * this.height);
+    // メソッド内でプロパティにアクセスするときはthisを忘れないように！！
+    // 方法2 return this.width * this.height;
+  }
+};
+
+rectangle.calcArea();
+// 方法2 console.log(rectangle.calcArea());
