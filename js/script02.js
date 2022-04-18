@@ -254,7 +254,11 @@ toHeisei(2017);
  * 何度でも呼び出すことができる
 */
 
-console.log('----- デフォルト引数 -----');
+
+
+
+
+
 
 
 
@@ -262,6 +266,7 @@ console.log('----- デフォルト引数 -----');
  * 関数の応用的な使い方
 */
 
+console.log('----- デフォルト引数 -----');
 
 /**
  * デフォルト引数
@@ -280,6 +285,10 @@ let printSum = (a, b, withText = false) => {
 
 printSum(4, 6);
 printSum(5, 7, true);
+
+
+
+
 
 console.log('----- 再帰関数 -----');
 
@@ -330,6 +339,11 @@ func02(); // 変数func02に代入された無名関数を実行する
 // 巻き上げは行われない
 
 
+
+
+
+console.log('----- アロー関数 -----');
+
 // 3）アロー関数
 const add02 = (a, b) => a + b;
 console.log(add02(10, 50));
@@ -343,3 +357,53 @@ const calc = () => {
 }
 // 関数が複数行にわたる場合は{}やreutrnを使う（値を返さない関数なら不要）
 console.log(calc());
+
+
+
+
+
+console.log('----- 高階関数 -----');
+
+/**
+ * 高階関数
+ * 関数をとる関数、関数を返す関数
+*/
+
+const twice = (fn) => {
+  fn();
+  fn();
+}
+
+const myFunc =() => console.log('myFunc関数');
+
+twice(myFunc);
+
+
+
+
+
+
+console.log('----- クロージャ -----');
+
+/**
+ * クロージャ
+ * JavaScriptにおいて関数はすべて「クロージャ」である
+ * 実行場所に関係なくアクセスできる、という性質がある
+ * 関数がアクセスできる変数というのは、定義場所だけで決まる
+ * 
+ * 自分を囲むスコープ（変数を参照できる範囲のこと）にある変数を参照できる関数
+ * 
+*/
+
+function func03() {
+  const inner = '関数の内側';
+  return function(){ 
+    console.log(inner)  // 内側の関数が外側の関数の変数innerを参照している
+  };
+}
+
+const innerFunc = func03();
+// 関数func03の外側から変数innerを表示しようとしているが、エラーになっていない
+// 無名関数の定義場所からは変数innerにアクセスできるため、実行場所に関係なくアクセスできる
+
+innerFunc();
