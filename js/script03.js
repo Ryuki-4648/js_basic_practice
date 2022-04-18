@@ -97,6 +97,36 @@ const arraySum = new Array(arrayLength); // ★配列sumも作成しておく
 for(let i = 0; i < arrayType01.length; i++) {
   // 間違いconst arraySum[i] = arrayType01[i] + arrayType02[i];　ここで変数arraySumを使ったら、forの外で使えない
   arraySum[i] = arrayType01[i] + arrayType02[i];
-  console.log(`${arrayType01[i]}と${arrayType02[i]}の和は${arraySum}です。`);
+  console.log(`${arrayType01[i]}と${arrayType02[i]}の和は${arraySum[i]}です。`);
 }
 console.log(arraySum);
+
+
+
+
+
+/**
+ * オブジェクト
+ * 文字列と値を結びつけるデータ構造
+*/
+
+// newで新しいオブジェクトを生成する方法
+const obj01 = new Object();
+
+obj01['乃木坂'] = '秋元 真夏';
+obj01['櫻坂'] = '菅井 友香';
+obj01['日向坂'] = '佐々木 久美';
+
+console.log(obj01);
+// キーとバリュー（値）:プロパティ
+// 配列の場合の添え字はオブジェクトの場合は文字列になっている
+
+
+
+// リテラルでオブジェクトを生成する方法
+const obj02 = {
+  乃木坂: '秋元 真夏',
+  櫻坂: '菅井 友香',
+  日向坂: '佐々木 久美'
+};
+console.log(obj02);
