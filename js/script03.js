@@ -50,7 +50,7 @@ console.log(array03);
 // constキーワードは、配列の中身の固定については保証しない
 
 
-
+console.log('----- ループと配列 -----');
 
 
 /**
@@ -81,6 +81,9 @@ for(const element of ofArray){
 
 
 
+console.log('----- 配列の例題 -----');
+
+
 /**
  * 例題
  * 配列[1, 3, 5, 7, 9, 11, 13, 15, 17, 19]と
@@ -102,7 +105,7 @@ for(let i = 0; i < arrayType01.length; i++) {
 console.log(arraySum);
 
 
-
+console.log('----- オブジェクト -----');
 
 
 /**
@@ -130,3 +133,59 @@ const obj02 = {
   日向坂: '佐々木 久美'
 };
 console.log(obj02);
+
+
+
+
+console.log('----- プロパティとメソッド -----');
+
+
+/**
+ * プロパティとメソッド
+*/
+
+const point = {}; // new Object()と同じ意味
+point.x = 2; // point['x'] = 2; 
+point.y = 10; // point['y'] = 10;
+
+console.log(point);
+console.log(point.x);
+console.log(point.y);
+
+
+
+const idle = {
+  乃木坂: 'Nogizaka',
+  櫻坂: 'Sakurazaka',
+
+  // 関数は値なので、プロパティとして関数を格納することもできる
+  // 値が関数のプロパティのことを「メソッド」という
+  sakamichi: function(){
+    console.log(idle.乃木坂);
+    console.log(idle.櫻坂);
+    console.log('坂道グループ');
+    console.log(this.乃木坂); // メソッド内部からプロパティまたは他のメソッドを呼び出すときにはthisを使う
+    console.log(this.櫻坂);
+  }
+};
+
+// メソッドを呼び出す
+idle.sakamichi();
+
+
+
+const pointer = {
+  x: 10,
+  y: 20,
+  printer: function(){
+    console.log(this.x);
+    console.log(this.y);
+  }
+};
+pointer.printer();
+
+
+
+
+// consoleオブジェクトのlogメソッドを呼び出している
+// console.log();
