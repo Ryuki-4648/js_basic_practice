@@ -210,3 +210,93 @@ const rectangle = {
 
 rectangle.calcArea();
 // 方法2 console.log(rectangle.calcArea());
+
+
+
+
+
+
+console.log('----- プリミティブ型とオブジェクト型 -----');
+
+
+/**
+ * プリミティブ型とオブジェクト型
+ * 
+ * オブジェクト型以外の型をプリミティブ型という。
+ * オブジェクトのように、プロパティやメソッドを持たない。
+ * newキーワードも不要。
+*/
+
+
+// プリミティブ型をオブジェクト型に変換するラッパーオブジェクトが存在する
+
+// ラッパーオブジェクト
+// 数値をNumberオブジェクトでラップ
+const num = new Number(3.1415);
+// 精度3桁の文字列に変換する
+console.log(num.toPrecision(3));
+
+
+// ↑のように毎回ラップするのは面倒。
+
+
+// オートボクシング＝プリミティブ型に対してメソッド呼び出しを行うと、自動的に対応するオブジェクトでラップしてくれる
+const numStr = (3.1415).toPrecision(3);
+console.log(numStr);
+
+
+
+
+/**
+ * オブジェクト型と等価性
+ * 
+ * 等価演算子は中身を比較するのではなく、「全く同一のオブジェクトかどうか」を判定する
+*/
+
+const obj1 = {
+  x: 10
+};
+const obj2 = {
+  x: 10
+};
+
+console.log(obj1 === obj2); // false 異なるオブジェクトのため
+console.log(obj1 == obj2); // false
+console.log(obj1 === obj1); // true
+console.log(obj1 == obj1); // true
+
+
+
+
+/**
+ * オブジェクト型と変数
+ * 
+ * 
+*/
+
+const obj3 = {
+  value: 100
+};
+const objCopy = obj3;
+
+objCopy.value = 5;
+
+console.log(obj3); // value:5
+console.log(objCopy); // value:5
+
+/**
+ * コピー元のobj3のプロパティまで変更されている！！
+ * 
+ * オブジェクトそのものではなく、「参照値（データのアドレス）」がコピーされる
+*/
+
+let func = (obj4) => {
+  obj4.value= 100;
+}
+
+const object = {value: 0};
+
+func(object);
+
+console.log(object.value); // 100
+// 関数の引数にオブジェクトを渡すと、オブジェクトではなく参照値が渡される
