@@ -247,6 +247,8 @@ console.log(numStr);
 
 
 
+console.log('----- オブジェクト型と等価性 -----');
+
 /**
  * オブジェクト型と等価性
  * 
@@ -268,10 +270,10 @@ console.log(obj1 == obj1); // true
 
 
 
+console.log('----- オブジェクト型と変数 -----');
+
 /**
  * オブジェクト型と変数
- * 
- * 
 */
 
 const obj3 = {
@@ -300,3 +302,28 @@ func(object);
 
 console.log(object.value); // 100
 // 関数の引数にオブジェクトを渡すと、オブジェクトではなく参照値が渡される
+
+
+
+console.log('----- 配列のプロパティとメソッド -----');
+
+/**
+ * 配列のプロパティとメソッド
+ * 
+ * 配列はオブジェクトなので、多数のプロパティとメソッドを持つ
+*/
+
+
+// lengthプロパティ その配列の長さを表す
+const array = [2, 4, 6, 8];
+console.log(array);
+console.log(array.length); // 4
+
+
+// pushメソッド 配列に値を追加する
+array.push(10);
+console.log(array.length); // 5
+console.log(array); // (5) [2, 4, 6, 8, 10]
+
+
+// 配列もオブジェクトなので、変数には参照値が入っている！！！
