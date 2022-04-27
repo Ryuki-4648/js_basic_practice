@@ -495,7 +495,29 @@ class Circle {
 
 const c1 = new Circle(4);
 const c2 = new Circle(10);
+const c3 = new Circle(3);
 
 console.log(c1.calcArea());
 console.log(c2.calcArea());
 console.log(c3.calcArea());
+
+
+
+/**
+ * 例題
+ * 
+ * 空の配列を作り、その配列にランダムな数値100個を格納し、ひとつずつコンソール上に表示せよ。
+ * なおランダムな数はMath.ramdom()メソッドで生成することができる。
+*/
+
+
+const emptyArr = [];
+const randomNum = Math.floor(Math.random() * 11);
+console.log(randomNum);
+
+emptyArr.push(randomNum);
+console.log(emptyArr);
+
+for( let i = 0; i <= 10; i++ ) {
+  
+}
