@@ -377,3 +377,63 @@ class Point {
 const point1 = new Point(1, 2); // new プロトタイプ名(コンストラクタに渡す値
 const point2 = new Point(5, 8);
 console.log(point1.distanceTo(point2));
+
+
+
+
+/**
+ * プロトタイプとインスタンス
+ * 
+ * プロトタイプを元に作られたオブジェクトのことをインスタンスと呼ぶ
+ * 各インスタンスは独立した「プロパティ」を持っているが、「メソッド」は共通。
+*/
+
+
+
+/**
+ * getterとsetter
+*/
+
+class Rectangle {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  // getterの定義。引数はゼロ個で戻り値がある
+  get area(){
+    return this.width * this.height;
+  }
+}
+
+const rect = new Rectangle(4, 6);
+console.log(rect.area); // 24
+// 関数の呼び出しには本来カッコが必要だが、getterを使えばプロパティのようにカッコ無しで呼び出すことができる
+
+
+
+
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  get age(){
+    return this._age; // 名前が変わらないように_をつけることがある
+  }
+
+  // setter
+  // 引数はひとつで、戻り値無しのメソッド
+  set age(newAge) {
+    if(newAge < 0) {
+      this._age = 0
+    } else {
+      this._age = newAge;
+    }
+  }
+}
+
+const person = new Person('守屋麗奈', 24);
+person.age = -5;
+console.log(person.age);
