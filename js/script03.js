@@ -467,6 +467,7 @@ console.log(MyUtil.triple(5));
  * ただし円周率にはMath.PIを使用すること。
 */
 
+/*
 class Circle {
   constructor(radius) {
     this.radius = radius;
@@ -480,3 +481,21 @@ class Circle {
 
 const hoge = new Circle(4);
 console.log(hoge);
+*/
+
+class Circle {
+  constructor(r) {
+    this.radius = r;
+  }
+
+  calcArea(){
+    return this.radius * this.radius * Math.PI;
+  }
+}
+
+const c1 = new Circle(4);
+const c2 = new Circle(10);
+
+console.log(c1.calcArea());
+console.log(c2.calcArea());
+console.log(c3.calcArea());
