@@ -510,7 +510,8 @@ console.log(c3.calcArea());
  * なおランダムな数はMath.ramdom()メソッドで生成することができる。
 */
 
-
+/*
+自分の回答
 const emptyArr = [];
 const randomNum = Math.floor(Math.random() * 11);
 console.log(randomNum);
@@ -520,4 +521,18 @@ console.log(emptyArr);
 
 for( let i = 0; i <= 10; i++ ) {
   
+}
+*/
+
+
+// 回答例
+const emptyArr = [];
+
+for(let i = 0; i <= 10; i++) {
+  const value = Math.random();
+  emptyArr.push(value);
+}
+
+for(let i = 0; i < emptyArr.length; i++) {
+  console.log(emptyArr[i]);
 }
