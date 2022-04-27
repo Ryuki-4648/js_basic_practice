@@ -379,7 +379,7 @@ const point2 = new Point(5, 8);
 console.log(point1.distanceTo(point2));
 
 
-
+console.log('----- プロトタイプとインスタンス -----');
 
 /**
  * プロトタイプとインスタンス
@@ -437,3 +437,46 @@ class Person {
 const person = new Person('守屋麗奈', 24);
 person.age = -5;
 console.log(person.age);
+
+
+
+/**
+ * staticメソッド
+ * 
+ * static(静的)メソッド。インスタンスを作らずにアクセスできるメソッド。
+*/
+
+class MyUtil {
+  // staticメソッドの定義
+  static triple(x){
+    return x * 3;
+  }
+}
+
+console.log(MyUtil.triple(5));
+
+
+
+
+
+/**
+ * 例題
+ * 
+ * 例題：半径を表すプロパティradiusと、面積を計算するメソッドcalcAreaをを持つクラスCircleを作成せよ。
+ * また、実際にいくつかインスタンスを生成し、面積計算が正しいか確かめよ。
+ * ただし円周率にはMath.PIを使用すること。
+*/
+
+class Circle {
+  constructor(radius) {
+    this.radius = radius;
+  }
+
+  calcArea(radius){
+    const area = radius * radius * Math.PI;
+    return area;
+  }
+}
+
+const hoge = new Circle(4);
+console.log(hoge);
