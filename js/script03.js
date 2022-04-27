@@ -305,6 +305,20 @@ console.log(object.value); // 100
 
 
 
+
+console.log('----- オブジェクトとしての配列 -----');
+
+/**
+ * オブジェクトとしての配列
+*/
+
+console.log(typeof [1, 2, 3, 4]); // object→配列はオブジェクトである！！！
+
+
+
+
+
+
 console.log('----- 配列のプロパティとメソッド -----');
 
 /**
@@ -327,3 +341,39 @@ console.log(array); // (5) [2, 4, 6, 8, 10]
 
 
 // 配列もオブジェクトなので、変数には参照値が入っている！！！
+
+
+
+
+
+console.log('----- オブジェクトとプロトタイプ -----');
+
+/**
+ * オブジェクトとプロトタイプ
+ * 
+ * 同じ構造を持ったオブジェクトを複数量産するのは大変。
+ * オブジェクトのテンプレート（プロトタイプ）を作って、そのテンプレートの構成を複製していく。
+ * ★classキーワードを使って作成
+*/
+
+// classキーワードを使ってプロトタイプを作成する
+class Point {
+  // コンストラクタ（プロトタイプを元にオブジェクトを作成したときに呼ばれるメソッド）
+  constructor(x, y) {
+    this.x =x;
+    this.y = y;
+  }
+
+  // メソッド
+  // functionを使わずそのままメソッド名から書けば関数としてみなされえる
+  distanceTo(other) {
+    const diffX2 = (this.x - other.x) **2;
+    const diffY2 = (this.y - other.y) **2;
+    const distance = Math.sqrt(diffX2 + diffY2);
+    return distance;
+  }
+}
+
+const point1 = new Point(1, 2); // new プロトタイプ名(コンストラクタに渡す値
+const point2 = new Point(5, 8);
+console.log(point1.distanceTo(point2));
